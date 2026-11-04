@@ -14,7 +14,6 @@ import textos as T
 BASE = Path(__file__).parent
 DATA_CSV = BASE / "data" / "municipios.csv"
 LOGO = BASE / "assets" / "logo.png"
-LOGO_CLARO = BASE / "assets" / "logo_light.png"
 ICON = BASE / "assets" / "icon.png"
 DOSSIER = BASE / "assets" / "dossier_sosmadera_ayuntamientos.pdf"
 
@@ -41,6 +40,7 @@ html, body, [class*="css"], .stMarkdown, p, li, label { font-family:'Source Sans
 h1, h2, h3, h4 { font-family:'Bitter', serif !important; color:var(--dark) !important; letter-spacing:-0.01em; }
 section[data-testid="stSidebar"] { background:var(--dark); }
 section[data-testid="stSidebar"] * { color:#F2EFEA !important; }
+section[data-testid="stSidebar"] [data-testid="stImage"] img { background:#FFFFFF; padding:14px 18px; border-radius:8px; }
 section[data-testid="stSidebar"] [data-baseweb="radio"] div[aria-checked="true"] { background:var(--light) !important; }
 div[data-testid="stMetric"] { background:white; border-left:4px solid var(--wood); padding:12px 16px; border-radius:4px; }
 div[data-testid="stMetricValue"] { font-family:'Bitter', serif; color:var(--dark); }
@@ -65,7 +65,7 @@ def acceso() -> bool:
     clave = secreto("app_password")
     if not clave or st.session_state.get("ok"):
         return True
-    st.image(str(LOGO), width=360)
+    st.image(str(LOGO), width=200)
     pwd = st.text_input("Contraseña", type="password")
     if st.button("Entrar", type="primary"):
         if pwd == clave:
@@ -150,7 +150,7 @@ hoy = dt.date.today()
 
 # ---------------------------------------------------------------- navegación
 with st.sidebar:
-    st.image(str(LOGO_CLARO), width="stretch")
+    st.image(str(LOGO), width=170)
     st.write("")
     seccion = st.radio("Sección", ["Panel", "Seguimiento", "Generar carta", "Kit de contacto",
                                    "Dossier", "Datos"], label_visibility="collapsed")

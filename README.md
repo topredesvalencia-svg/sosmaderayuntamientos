@@ -31,7 +31,7 @@ La primera vez que arranque, la app rellena la hoja con la lista inicial. Sin Go
 
 ## Personalizar
 
-- **Logo**: sustituye `assets/logo.png`, `assets/logo_light.png` (versión clara para la barra lateral) y `assets/icon.png`.
+- **Logo**: sustituye `assets/logo.png` (idealmente en alta resolución) y `assets/icon.png`.
 - **Colores**: `.streamlit/config.toml` y las variables CSS al principio de `app.py`.
 - **Textos de cartas y guía**: `textos.py`.
 - **Dossier**: sustituye `assets/dossier_sosmadera_ayuntamientos.pdf` por la versión final con fotos.
